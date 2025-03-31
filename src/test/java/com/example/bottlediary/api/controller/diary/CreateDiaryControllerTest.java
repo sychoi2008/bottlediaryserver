@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -20,6 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 // 이때 Controller, RequestMapping, JSON 변환 만 포함한다 -> 서비스, 리포지토리는 자동으로 로드되지 않음
 // 컨트롤러는 spring mvc의 기능을 사용하고 있기 때문에 테스트에도 스프링이 있어야 함
 // 컨트롤러와 관련된 애노테이션만 스캔에서 스프링 컨테이너에 빈으로 등록함!!!! -> 나머지는 직접 등록해줘야 함
+@ActiveProfiles("test")
 @WebMvcTest(CreateDiaryController.class)
 class CreateDiaryControllerTest {
 

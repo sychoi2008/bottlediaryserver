@@ -12,6 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.Optional;
 
@@ -28,6 +29,8 @@ import static org.mockito.Mockito.when;
  * 테스트 대상(Service, Controller 등)의 로직이 원하는 대로 흘러가고 있는지를 확인하는 거지,
  * 의존 객체(Repository 등)가 실제로 동작하는 걸 보려는 게 아님
  */
+
+@ActiveProfiles("test")
 // 이 테스트 클래스는 Mockito 기능을 사용할 거야(@Mock, @InjectMocks)을 사용하려면 반드시 필요
 @ExtendWith(MockitoExtension.class)
 class CreateDiaryServiceTest {

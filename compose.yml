@@ -1,0 +1,22 @@
+services:
+  my-server:
+    build: .
+    ports:
+      - 8080:8080
+    depends_on: # db가 뜨고 그 다음에 스프링이 뜨게 하라
+      my-db:
+        condition: service_healthy
+
+  my-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: pwd1234
+      MYSQL_DATABASE: bottlediarydb # 초기 데이터 베이스 지정
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    ports:
+      - 3307:3306
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping"]
+      interval: 5s
+      retries: 10
