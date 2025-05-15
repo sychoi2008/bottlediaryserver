@@ -9,6 +9,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.ActiveProfiles;
 
@@ -40,21 +42,17 @@ class FindMyDiaryListServiceTest {
         PageRequest pageable = PageRequest.of(0, 3);
 
         // 리포지토리에서 가져온 값
-        List<FindMyDiaryListResponse> expectedResponse = List.of(
+        List<FindMyDiaryListResponse> diaryList = List.of(
                 new FindMyDiaryListResponse(1L, "title1", "기뻐요", LocalDateTime.now())
         );
 
-        // 리포지토리가 가짜 객체이기 때문에 when으로 맞춰주기
+        Page<FindMyDiaryListResponse> expectedResponse = new PageImpl<>(diaryList);
         when(diaryRepository.findAllMyDiaryList(nickname, pageable)).thenReturn(expectedResponse);
-
-        //when
-        // 진짜 서비스 코드에서 해쉬함수를 통해 해시값을 반환하는 데, 이때 해쉬값이 테스트 코드 안의 hashedUserId와 같음
-        // 따라서 when으로 설정된 것을 return 할 수밖에 없어서 expected와 actual은 같을 수 밖에 없음
-        List<FindMyDiaryListResponse> actual = findMyDiaryListService.findMyDiaryList(request.getUserId(), pageable);
+        Page<FindMyDiaryListResponse> actual = findMyDiaryListService.findMyDiaryList(request.getUserId(), pageable);
 
         //then
         verify(diaryRepository, times(1)).findAllMyDiaryList(nickname, pageable);
-        assertThat(actual).isEqualTo(expectedResponse);
+        assertThat(actual.getContent()).isEqualTo(diaryList);
      }
 
 }

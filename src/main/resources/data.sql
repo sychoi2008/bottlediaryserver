@@ -1,60 +1,124 @@
 -- 감정 데이터
-INSERT INTO emotion (emotion_name) VALUES ('기뻐요');
-INSERT INTO emotion (emotion_name) VALUES ('지쳤어요');
-INSERT INTO emotion (emotion_name) VALUES ('슬퍼요');
-INSERT INTO emotion (emotion_name) VALUES ('화나요');
-INSERT INTO emotion (emotion_name) VALUES ('혼란스러워요');
-INSERT INTO emotion (emotion_name) VALUES ('무감각해요');
-INSERT INTO emotion (emotion_name) VALUES ('그냥 써보고 싶었어요');
+INSERT INTO emotion (emotion_name) VALUES ('嬉しいです');
+INSERT INTO emotion (emotion_name) VALUES ('疲れました');
+INSERT INTO emotion (emotion_name) VALUES ('悲しいです');
+INSERT INTO emotion (emotion_name) VALUES ('怒っています');
+INSERT INTO emotion (emotion_name) VALUES ('混乱しています');
+INSERT INTO emotion (emotion_name) VALUES ('無感覚です');
+INSERT INTO emotion (emotion_name) VALUES ('ただ書いてみたかったです');
 
 -- 기뻐요 (emotion_id = 1)
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('아침 햇살', '오늘 날씨가 정말 좋았는데, 필라테스를 가려다가 잠시 멈출 정도였다. \n어쩌면 우리는 이 사소한 기쁨을 잊고 살던 것은 아니었을까?, 이 날이 두고두고 생각났으면 좋겠어요', 1, 'user456');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('발견은 나를 기쁘게 해', '당연한 것은 이 세상에 하나도 없더라고요.\n내가 숨쉬는 것도 감사하고 맛있는 밥을 먹는 것도, 부모님이 건강하신 것도 정말 감사해요.', 1, 'guest01');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('맛있는 거 먹으려고 삽니다.', '어느 순간부터 사는 것이 지겹다는 생각이 들 때가 많았어요.\n그때 저를 이겨내게 도와줬던 것은 냉장고 한 구석에 숨쉬고 있던 초코케이크였어요.\n잠들기 전에 아 내일 초코케이크 먹어야지. 그 생각으로 내일을 기다렸어요.', 1, 'user456');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('이제 봄인가요?', '사람이 살기 딱 좋은 온도는 10도라고 생각해요. \n덥지도 춥지도 않은 온도. 이 날씨가 1년 내내 갔으면 좋겠어요. 그럴리는 없지만요 ㅋㅋㅋ', 1, 'tester');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('웃음이 멈추지 않았다', '오늘 무한도전이랑 거침없이 하이킥을 다시 봤는데 진짜 너무 웃겼다.\n어렸을 때에도 참 재밌게 봤는데 지금봐도 재밌네!', 1, 'user456');
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('朝の陽ざし', '今日は天気が本当に良くて、ピラティスに行こうとしたけど、思わず立ち止まってしまいました。\nもしかすると、私たちはこの些細な喜びを忘れて生きているのかもしれません。この日をずっと覚えていたいです。', 1, '37268335dd6931045bdcdf92623ff819a64244b53d0e746d438797349d4da578');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('発見は私を喜ばせる', '当たり前のことなんてこの世に一つもありません。\n呼吸できること、美味しいご飯を食べられること、両親が健康でいてくれること、すべてに本当に感謝しています。', 1, 'guest01');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('美味しいもののために生きてます', 'いつの間にか人生が退屈だと感じることが多くなりました。\nそんな時に私を支えてくれたのは、冷蔵庫の隅にあったチョコケーキでした。\n寝る前に「明日はチョコケーキを食べよう」と思いながら、明日を楽しみにしていました。', 1, 'user456');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('もう春ですか？', '人が快適に過ごせる温度は10度だと思います。\n暑くもなく寒くもないこの気温が一年中続けばいいのに。そんなことはないけどね（笑）', 1, 'tester');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('笑いが止まらなかった', '今日は「無限挑戦」と「思いっきりハイキック」をまた見たけど、本当に笑いが止まりませんでした。\n子供の頃も楽しく見ていたけど、今見てもやっぱり面白い！', 1, 'user456');
 
 -- 지쳤어요 (emotion_id = 2)
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('지치고 반복되는 하루', '하루 종일 지쳐서 먹는 것도 힘이 들었다.\n너무 바쁘고 일이 밀려들어 오는 와중에 반복되는 하루...\n이게 정말 내가 원하는 삶인건가? 이 끝은 어딘건가?', 2, 'guest01');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('취준중 너무 우울', '지쳤어요.\n취준이 길어지면서 내가 정말 잘하고 있는 것인지 믿음이 안가요.\n공부는 하는데 의욕이 잘 나지 않아요. 금방 바닥나버렸어요', 2, 'guest123');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('에너지가 바닥났어요', '핸드폰을 오래쓰면 배터리 성능이 내려가잖아요?\n제가 딱 그런 것 같습니다.\n잠을 자도 잔 것처럼 개운하지 않고, 누워있어도 무기력해져요.\n저와 같은 분이 계실까요?', 2, 'guest01');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('지친 몸과 마음', '피곤해요. 사람이 쓸 수 있는 에너지의 양은 한정되어 있는데 그 이상의 것을 요구하는 것 같아요.\n촛농처럼 녹아내려요.', 2, 'tester');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('기력이 없어요', '모든 게 지쳤어요. 힘들어요', 2, 'guest01');
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('疲れて繰り返される一日', '一日中疲れていて、食事をするのも大変でした。\n忙しさの中で押し寄せる仕事、そして繰り返される毎日...\nこれが本当に私の望む人生なのか？この終わりはどこにあるのか？', 2, '37268335dd6931045bdcdf92623ff819a64244b53d0e746d438797349d4da578');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('就活中でとても憂鬱', '疲れました。\n就職活動が長引くにつれて、自分が本当にうまくやっているのか自信が持てません。\n勉強はしているけれど、やる気がなかなか出ません。すぐに気力が尽きてしまいました。', 2, 'guest123');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('エネルギーが尽きました', 'スマホを長く使うとバッテリー性能が落ちますよね？\nまさに今の私がそんな感じです。\n寝ても疲れが取れず、横になっていても無気力です。\n同じように感じている方はいませんか？', 2, 'guest01');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('疲れた心と体', '疲れました。人が使えるエネルギーは限られているのに、それ以上を求められている気がします。\nロウソクの蝋のように溶けていく感じです。', 2, 'tester');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('気力がありません', 'すべてに疲れました。辛いです。', 2, 'guest01');
 
 -- 슬퍼요 (emotion_id = 3)
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('비처럼 눈물난 날', '오늘은 정말 슬퍼요.\n마음에 비가 내리는 것 같아요.\n에픽하이의 우산이 듣고 싶어지네요', 3, 'tester');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('넷플릭스 폭싹 속았수다 진짜 슬프네요', '요새 엄청 핫해서 클립 몇 개를 봤는데 아주 그냥 눈물이 안 나오는 에피소드가 없네요\n사람 인생이란 무엇일까요?', 3, 'anonymous');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('마음이 무거웠어요', '유기견, 유기묘에 대한 글을 보면은 너무 슬퍼요.\n영문도 모른채 그저 주인만을 기다리는 아이들.. 말도 통하지 않으니 너무 가슴이 아프더라고요.', 3, 'guest123');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('내가 위로가 되었을까요', '친한 친구가 너무 슬픈 일을 겪었다고 해서 위로를 해줬어요.\n하지만 제가 큰 도움이 되지 못한 것 같아서 미안하고 슬프네요', 3, 'guest01');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('하늘도 울었던 날', '어딘가에 가서 크게 소리지르며 통곡하고 싶어요.\n답답합니다. 이런 경우 무엇을 해야할까요?', 3, 'anonymous');
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('雨のように涙が溢れた日', '今日は本当に悲しいです。\n心に雨が降っているような気分です。\nEpik Highの「傘」が聞きたくなります。', 3, '37268335dd6931045bdcdf92623ff819a64244b53d0e746d438797349d4da578');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('Netflixの「ザ・グローリー」、本当に悲しいですね', '最近話題になっていて、いくつかのクリップを見たのですが、涙が出ないエピソードがありませんでした。\n人の人生とは一体何なのでしょうか。', 3, 'anonymous');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('心が重かった', '捨て犬や捨て猫の記事を見ると本当に悲しくなります。\n理由もわからず、ただ飼い主を待ち続ける子たち…言葉も通じないので本当に胸が痛みます。', 3, 'guest123');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('私の慰めは届いたのだろうか', '親しい友人がとても悲しい出来事を経験したので慰めました。\nでも、あまり力になれなかった気がして、申し訳なくて悲しいです。', 3, 'guest01');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('空も泣いた日', 'どこかで大声で泣き叫びたい気分です。\n苦しいです。こんな時はどうすればいいのでしょうか？', 3, 'anonymous');
 
 -- 화나요 (emotion_id = 4)
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('짜증나는 하루', '오늘 버스를 타려고 기다리는데 누가 우산을 내 쪽을 향해서 폈다.\n덕분에 등에 물이 튀어서 너무 찝찝하고 그 사람은 사과도 없이 갔다. 정말 매너 없는 사람', 4, 'tester');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('화를 참기 어려웠던 날', '나는 일을 할 때는 조용히 하고 싶은데, 요새 들어 연락이나 귀찮게 하는 사람들이 많아졌다.\n내가 많이 여유가 없나보다. 이럴 때에는 다 내팽겨치고 싶고 쉬고 싶어...', 4, 'user456');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('버럭하고 말았어요', '떠올리는 것 조차 화가 나서 그다지 쓰고 싶지는 않지만, 요새 사람들은 너무 매너도 없고 화가 많은 것 같다.\n다들 여유가 없나보다.\n하지만 나 조차도 누군가의 눈에 그렇겠지?', 4, 'guest01');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('뉴스를 보면 분노밖에...', '세상에는 악한 사람들이 너무 많다.\n시간이 지날수록 악은 너무 다채로워지는 느낌이 든다.', 4, 'tester');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('끈적거리는 하루', '더운데 사무실에 에어컨이 고장났다. 정말 개빡쳐', 4, 'guest01');
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('イライラした一日', '今日バスを待っていたら、誰かが傘を私の方に向けて開きました。\nそのせいで背中に水がかかってとても不快だったのに、その人は謝りもせずに行ってしまいました。本当にマナーのない人だと思いました。', 4, '37268335dd6931045bdcdf92623ff819a64244b53d0e746d438797349d4da578');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('怒りを抑えられなかった日', '私は仕事をするときは静かに集中したいのに、最近やたらと連絡してきたり煩わしい人が増えました。\nきっと私に余裕がなくなっているのでしょう。こんな時は全部投げ出して休みたくなります…', 4, 'user456');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('ついカッとなってしまった', '思い出すだけでも腹が立つのであまり書きたくはないけれど、最近の人たちは本当にマナーがなくて、みんな怒りっぽい気がします。\n皆、心に余裕がないのでしょうね。\nでも、私も誰かの目にはそう見えているのかもしれません。', 4, 'guest01');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('ニュースを見ると怒りしか...', '世の中には悪い人が多すぎます。\n時間が経つほど、悪がどんどん多様化しているように感じます。', 4, 'tester');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('蒸し暑い一日', '暑いのにオフィスのエアコンが壊れました。本当にムカつく。', 4, 'guest01');
 
 -- 혼란스러워요 (emotion_id = 5)
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('혼란의 연속', '취준을 하면서 내가 누구인지 알 수가 없어지는 순간들이 많아진다.\n나는 무엇을 좋아했더라? 나는 무엇을 해야할까? 그러다보면은 어느순간부터 불안감과 두려움이 나를 덮친다.\n내가 정말 잘해낼 수 있을까?', 5, 'guest01');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('갈피를 못 잡겠는 하루', '저는 선택을 하는 것이 너무 어렵습니다. 선택지가 많아지면 도망가고 싶어요.\n누군가가 대신 정해줬으면 좋겠어요.', 5, 'guest01');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('흠...', '생각이 많으면 여유가 없어진다.\n하지만 선천적으로 생각이 많은 편이라 생각을 그만하라는 생각도 그만하고 싶다^^ㅠㅠ', 5, 'guest123');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('나를 헷갈리게 하는 사람', '민수는 혼란스럽다.라는 노래가 듣고 싶어진다.', 5, 'user456');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('혼란에 빠졌던 하루', '모든 게 혼란스러워요.', 5, 'guest01');
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('混乱の連続', '就職活動をしながら、自分が誰なのか分からなくなる瞬間が増えています。\n私は何が好きだったんだろう？何をすべきなんだろう？\nそんなことを考えているうちに、不安と恐怖が突然押し寄せてきます。\n本当にうまくやっていけるのかな？', 5, '37268335dd6931045bdcdf92623ff819a64244b53d0e746d438797349d4da578');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('迷いだらけの一日', '私は選択することが本当に苦手です。選択肢が増えると逃げたくなります。\n誰かが代わりに決めてくれたらいいのに。', 5, 'guest01');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('ふむ…', '考えすぎると心の余裕がなくなります。\nでも、生まれつき考え込みやすい性格なので、「考えるのをやめよう」という考えすらやめたいです^^;;', 5, 'guest123');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('私を混乱させる人', '「ミンスは混乱している」という歌が聞きたくなりました。', 5, 'user456');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('混乱に陥った一日', 'すべてが混乱しています。', 5, 'guest01');
 
 -- 무감각해요 (emotion_id = 6)
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('아무 감정도 들지 않아', '하루 종일 무감각해요.', 6, 'anonymous');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('멍한 하루', '하루 종일 무감각해요.', 6, 'guest123');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('그냥 그렇게 흘러간 하루', '특별한 것없는 평범한 하루의 반복', 6, 'user456');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('무표정한 하루', '하루에 내가 몇 번이나 웃더라? 어느순간부터 거울을 보니 아무런 표정이 없는 얼굴이 눈에 띈다\n주변의 삶에 관심도 사라지고 그냥 이 세상에 둥둥 표류하는 판자같은 느낌이다.', 6, 'guest01');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('지루해', '하루종일 책상에 앉아서 아무것도 능률이 안오르니 답답해요.', 6, 'user456');
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('何も感じない', '一日中無感覚でした。', 6, '37268335dd6931045bdcdf92623ff819a64244b53d0e746d438797349d4da578');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('ぼんやりした一日', '一日中無感覚でした。', 6, 'guest123');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('ただ過ぎていった一日', '特別なこともない平凡な一日の繰り返し。', 6, 'user456');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('無表情な一日', '今日は何回笑っただろう？気づけば鏡に映る自分の無表情な顔が目に留まりました。\n周りの生活にも興味がなくなり、この世をただ漂う板のような気分です。', 6, 'guest01');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('退屈', '一日中机に座っていても何も捗らず、もどかしい気分です。', 6, 'user456');
 
 -- 그냥 써보고 싶었어요 (emotion_id = 7)
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('일단 써봅니다', '원래 기록쟁이는 아니지만, 살다보면 내가 기록한 것에 도움을 받을 때가 많다고 느낀다.\n내가 지금 그런 상황인데, 조금 더 자세히 적어둘걸..!이라고 후회하고 있는 중이다\n과거에도 현재와 비슷한 감정을 느꼈던 때가 있었기 때문에 그때 내가 어떻게 대처했더라?', 7, 'tester');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('기록해보고 싶은 날', '그냥 써보고 싶었어요. 거창할 것도 없이 소박하게 내 스타일대로 가보자고.\n다른 사람들은 어떤 식으로 글을 쓰려나?', 7, 'anonymous');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('노래 추천', '오은혜-i wish. 싸이월드에 브금으로 많이 들었는데 지금 들어도 좋다.', 7, 'guest123');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('오늘 짤막한 노트', '거창한 준비보다 그냥 뛰어들고 도전해보는 것이 중요하다고 생각이 들었어요.', 7, 'user456');
-INSERT INTO diary (title, content, emotion_id, user_id) VALUES ('나만의 실험', '오늘은 정말 그냥 써보고 싶었어요. 무기력을 이겨내려고 노력중이에요', 7, 'guest123');
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('とりあえず書いてみます', 'もともと記録するタイプではないですが、人生で自分の記録に助けられることが多いと感じます。\n今まさにそんな状況で、もっと詳しく書いておけばよかった…と後悔しています。\n過去にも今と似た感情を感じたことがあるので、その時どうやって乗り越えたのか思い出しています。', 7, '37268335dd6931045bdcdf92623ff819a64244b53d0e746d438797349d4da578');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('記録してみたい日', 'ただ書いてみたかったんです。大げさにせず、シンプルに自分のスタイルでやってみよう。\n他の人はどんな風に書いているのかな？', 7, 'anonymous');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('おすすめの曲', 'オ・ウネ - i wish。サイワールドのBGMでよく聞いていましたが、今聞いても良いですね。', 7, 'guest123');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('今日のひとことノート', '大げさな準備よりも、とにかく飛び込んで挑戦することが大事だと感じました。', 7, 'user456');
+
+INSERT INTO diary (title, content, emotion_id, user_id)
+VALUES ('私だけの実験', '今日は本当にただ書いてみたかったんです。無気力を乗り越えようと頑張っています。', 7, 'guest123');
 
 -- 댓글 1개만 예시로
-INSERT INTO comment (content, diary_id) VALUES ('어제 참 재밌더라고요? 어제는 눈이 오다가 햇빛이 비추는 게 너무 신기하고.. 이것도 행복 아닐까요?(?)', 1);
+INSERT INTO comment (content, diary_id)
+VALUES ('昨日は本当に楽しかったですね？雪が降ったかと思えば日差しが差してきて…とても不思議でした。これも幸せってやつじゃないでしょうか？（？）', 1);

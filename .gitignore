@@ -54,3 +54,6 @@ application-test.yml
 
 
 /mysql-data
+
+
+compose.yml

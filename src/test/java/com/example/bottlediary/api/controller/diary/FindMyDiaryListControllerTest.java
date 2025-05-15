@@ -6,6 +6,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
@@ -30,35 +32,36 @@ class FindMyDiaryListControllerTest {
     @MockitoBean
     private FindMyDiaryListService findMyDiaryListService;
 
-    @DisplayName("")
+    @DisplayName("내가 쓴 일기 목록")
     @Test
-    void findAllMyDiaryList() throws Exception{
-        //given
+    void findAllMyDiaryList() throws Exception {
+        // given
         String requestBody = """
-                {
-                    "userId": "guest01",
-                    "userPwd": "1234"
-                }
-                """;
+            {
+                "userId": "guest01",
+                "userPwd": "1234"
+            }
+            """;
 
-
-        List<FindMyDiaryListResponse> expectedResponse = List.of(
+        List<FindMyDiaryListResponse> diaryList = List.of(
                 new FindMyDiaryListResponse(1L, "title1", "기뻐요", LocalDateTime.now())
         );
 
-        //when
-        when(findMyDiaryListService.findMyDiaryList(any(),any())).thenReturn(expectedResponse);
+        Page<FindMyDiaryListResponse> expectedResponse = new PageImpl<>(diaryList);
 
+        when(findMyDiaryListService.findMyDiaryList(any(), any())).thenReturn(expectedResponse);
 
-        //then
+        // when & then
         mockMvc.perform(post("/bottlediary/mydiary")
-                .param("page", "1")
-                .param("size", "3")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(requestBody))
+                        .param("page", "1")
+                        .param("size", "3")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].title").value("title1"));
+                .andExpect(jsonPath("$.content[0].title").value("title1"))
+                .andExpect(jsonPath("$.totalPages").value(1))
+                .andExpect(jsonPath("$.totalElements").value(1));
+    }
 
-     }
 
 }

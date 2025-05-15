@@ -1,6 +1,7 @@
 package com.example.bottlediary.domain.diary;
 
 import com.example.bottlediary.api.controller.diary.dto.FindMyDiaryListResponse;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -19,6 +20,7 @@ public interface DiaryRepository extends JpaRepository<Diary, Long> {
     // 내 일기 목록을 보기
     @Query("select new com.example.bottlediary.api.controller.diary.dto.FindMyDiaryListResponse(d.id, d.title, d.emotion.emotionName, d.createdDateTime)" +
     "from Diary d join d.emotion e where d.userId = :userId")
-    List<FindMyDiaryListResponse> findAllMyDiaryList(@Param("userId") String userId, Pageable pageable);
+    Page<FindMyDiaryListResponse> findAllMyDiaryList(@Param("userId") String userId, Pageable pageable);
+
 
 }

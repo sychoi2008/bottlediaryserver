@@ -1,3 +1,4 @@
 spring:
   profiles:
-    active: dev
+#    active: dev
+    active: prod # 배포시에는 반드시 이미지를 prod로 바꿀 것
